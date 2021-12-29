@@ -25,7 +25,7 @@ export class ListBooksCardsComponent implements OnInit {
       }
     });
   }
-
+  
   getBooks(): void{
     console.log(`Valeur de book avant execution de getbooks -> ${this.books}`);
     // console.log(`valeur de l'url dans le getbooks ${this.dataService.urlApi}`)

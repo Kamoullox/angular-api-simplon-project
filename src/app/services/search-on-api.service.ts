@@ -23,7 +23,8 @@ export class SearchOnApiService{
   }
 
   public getById(id: string){
-    let url = `https://www.googleapis.com/books/v1/volumes/${id}&langrestrict=fr`;
+    let url = `https://www.googleapis.com/books/v1/volumes/${id}`;
+    console.log(url)
     return this.httpClient.get(url);
   }
 

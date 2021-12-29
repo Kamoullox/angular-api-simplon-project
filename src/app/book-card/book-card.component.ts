@@ -33,6 +33,6 @@ export class BookCardComponent implements OnInit {
 
   onContinue() {
     this.router.navigateByUrl(`detailBook/${this.id}`);
-}
+  }
 
 }

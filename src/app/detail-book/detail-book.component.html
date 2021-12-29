@@ -4,7 +4,7 @@
         <div class="book-card__book-front">
           <img
             class="book-card__img"
-            src="../../assets/noImage.jpg"
+            src="{{ urlImage }}"
           />
         </div>
         <div class="book-card__book-back"></div>
@@ -12,9 +12,14 @@
       </div>
     </div>
     <div>
-      <div class="book-card__title">Test title</div>
-      <div class="book-card__author">Test Author</div>
+      <div class="book-card__title">{{ title }}</div>
+      <div class="book-card__author">{{ author }}</div>
+    </div>
+    <div>
+      <div class="description-bloc">
+        <p style="white-space: pre;">{{ description }}</p>
+      </div>
     </div>
   </div>
   
-  <a routerLink="/home">Retour a la liste</a>
+  <a routerLink="">Retour a la liste</a>
