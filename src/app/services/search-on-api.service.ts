@@ -1,19 +1,30 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SearchOnApiService {
+export class SearchOnApiService{
 
-  title = "Harry potter";
+  // Observable
+  subject = new Subject<string>();
 
-  private REST_API_SERVER = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr`;
+  title = "pokemon";
+
+  private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr&maxResults=40`;
 
   constructor(private httpClient: HttpClient) { }
 
   public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER);
+    this.urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr&maxResults=40`;
+    return this.httpClient.get(this.urlApi);
   }
+
+  public getById(id: string){
+    let url = `https://www.googleapis.com/books/v1/volumes/${id}&langrestrict=fr`;
+    return this.httpClient.get(url);
+  }
+
 }
