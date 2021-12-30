@@ -30,7 +30,7 @@ export class ListBooksCardsComponent implements OnInit {
     console.log(`Valeur de book avant execution de getbooks -> ${this.books}`);
     // console.log(`valeur de l'url dans le getbooks ${this.dataService.urlApi}`)
 
-    this.dataService.sendGetRequest().subscribe((data) => {
+      this.dataService.sendGetRequest().subscribe((data) => {
       this.books = data;
       this.books = this.books.items;
       

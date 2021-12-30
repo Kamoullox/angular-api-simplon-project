@@ -10,7 +10,7 @@ export class SearchOnApiService{
 
   // Observable
   subject = new Subject<string>();
-
+  
   input = "Harry Potter";
 
   private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.input}&langrestrict=fr&maxResults=40`;
