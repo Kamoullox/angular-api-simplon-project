@@ -39,7 +39,8 @@ p {
 /*Resize the wrap to see the search bar change!*/
 .wrap {
     width: 50%;
-    margin: 10px auto;
+    margin: 0 auto;
+    padding-top: 2vh;
     height: 5%;
     min-width: 300px;
 
@@ -103,5 +104,6 @@ p {
         border-radius: 5px;
         background-color: $base-color;
         color: #fff;
+        cursor: pointer;
     }
 }

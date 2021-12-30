@@ -3,6 +3,7 @@
     padding: 16px;
     margin: 2vh;
     cursor: pointer;
+    color: white;
     background: rgb(211 211 211 / 25%);
     box-shadow: -3px 3px 16px 1px rgb(0 0 0 / 37%);
     backdrop-filter: blur( 4px );
@@ -69,7 +70,7 @@
     }
   
     .book-card__author {
-      color: #757575;
+      color: #c9c9c9;
       font-size: 1em;
       height: 5vh;
     }
