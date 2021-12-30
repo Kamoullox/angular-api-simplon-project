@@ -21,10 +21,17 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitText() {
-    console.log("dans le submit txt")
+  submitText(boolVerif:boolean = false) {
+    console.log(boolVerif)
+    let verif: string;
+    if (boolVerif === false) {
+      this.dataService.input = this.txt;
+      this.dataService.subject.next("New Search send !");
+    }
+    else{
     this.dataService.input = this.txt;
-    this.dataService.subject.next("New Search send !");
+    this.dataService.subject.next("author");
+    }
   }
 
 }
