@@ -4,7 +4,7 @@
       <input type="text" id="texteInput" class="searchTerm" [(ngModel)]="txt" placeholder="Que cherchez-vous ? ">
       <div class="buttonSection">
       
-         <div class="buttonSection__searchBook">
+         <div (click)= "submitText()" class="buttonSection__searchBook">
             <p>Rechercher par livre</p>
          </div>
 
