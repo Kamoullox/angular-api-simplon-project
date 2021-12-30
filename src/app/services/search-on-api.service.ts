@@ -11,7 +11,7 @@ export class SearchOnApiService{
   // Observable
   subject = new Subject<string>();
 
-  title = "pokemon";
+  title = "Harry Potter";
 
   private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr&maxResults=40`;
 

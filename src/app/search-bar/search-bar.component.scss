@@ -35,8 +35,11 @@
 
 /*Resize the wrap to see the search bar change!*/
 .wrap {
-    width: 30%;
+    width: 50%;
     margin: 10px auto;
+    height: 5%;
+    min-width: 300px;
+
 
     body {
         background: #f2f2f2;
@@ -47,6 +50,7 @@
         width: 100%;
         position: relative;
         display: flex;
+        height: 100%;
     }
 
     .searchTerm {
@@ -54,7 +58,7 @@
         border: 3px solid #00b4cc;
         border-right: none;
         padding: 5px;
-        height: 20px;
+        height: 100%;
         border-radius: 5px 0 0 5px;
         outline: none;
         color: #9dbfaf;
@@ -66,7 +70,7 @@
 
     .searchButton {
         width: 40px;
-        height: 36px;
+        height: auto;
         border: 1px solid #00b4cc;
         background: #00b4cc;
         text-align: center;
@@ -79,6 +83,5 @@
     /*Resize the wrap to see the search bar change!*/
     .wrap {
         width: 30%;
-        
     }
 }

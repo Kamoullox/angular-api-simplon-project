@@ -3,8 +3,7 @@
     padding: 16px;
     border-radius: 5px;
     background-color: #fff;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    margin: 2vh;
     cursor: pointer;
     box-shadow:
       0 3px 6px rgba(0, 0, 0, 0.16),
@@ -59,11 +58,18 @@
     .book-card__title {
       font-size: 1.5em;
       margin-bottom: 8px;
+      height: 10vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      overflow: auto;
+
     }
   
     .book-card__author {
       color: #757575;
       font-size: 1em;
+      height: 5vh;
     }
   
     // STATES

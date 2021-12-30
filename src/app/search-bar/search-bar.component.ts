@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchOnApiService } from '../services/search-on-api.service';
 import { Subject } from 'rxjs';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -12,6 +13,8 @@ import { Subject } from 'rxjs';
 export class SearchBarComponent implements OnInit {
 
   constructor(private dataService: SearchOnApiService) { }
+
+  faSearch = faSearch;
 
   txt: string = ""
 

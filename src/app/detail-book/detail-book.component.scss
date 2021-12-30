@@ -1,11 +1,13 @@
 .book-card {
-    width: 280px;
+    width: 80%;
     padding: 16px;
     border-radius: 5px;
     background-color: #fff;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    cursor: pointer;
+    margin: 2vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     box-shadow:
       0 3px 6px rgba(0, 0, 0, 0.16),
       0 3px 6px rgba(0, 0, 0, 0.23);
@@ -13,13 +15,13 @@
     .book-card__cover {
       position: relative;
       width: 200px;
-      height: 300px;
+      
       margin: 2vh auto 2px auto;
       perspective: 1000px;
     }
     
     .book-card__book {
-      height: 100%;
+      height: 300px;
       transform-style: preserve-3d;
       transition: all 250ms ease;
     }
@@ -82,6 +84,65 @@
     }
   }
 
-  .description-bloc {
-    height: auto;
+  .book-card{
+    &__detail{
+      width: 50%;
+    }
+
+    &__rating {
+      width: fit-content;
+    }
+    
+  }
+
+  .book-card__description{
+    margin-top: 2vh;
+    width: 100%;
+  }
+
+  .topPart {
+    width: 90%;
+  }
+
+
+  // -----------------------------------------------------
+
+  .star {
+    position: relative;
+    display: inline-block;
+    font-size: 3rem;
+    color: #d3d3d3;
+  }
+  .full {
+    color: rgb(121, 75, 75);
+  }
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: rgb(255, 51, 0);
+    height: fit-content;
+  }
+
+  @media screen and (min-width: 800px) {
+    .book-card {
+      display: flex;
+
+      &__detail{
+        width:50%;
+      }
+    }
+
+    .book-card__description{
+      width: 80%;
+    }
+
+    .topPart {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+   
   }

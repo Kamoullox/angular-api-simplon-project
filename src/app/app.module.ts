@@ -10,7 +10,11 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 
 import { FormsModule } from '@angular/forms';
 import { DetailBookComponent } from './detail-book/detail-book.component';
-import { HomeComponent } from './home/home.component'; // <-- NgModel lives here
+import { HomeComponent } from './home/home.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // <-- NgModel lives here
+
+
 
 
 @NgModule({
@@ -20,13 +24,15 @@ import { HomeComponent } from './home/home.component'; // <-- NgModel lives here
     ListBooksCardsComponent,
     SearchBarComponent,
     DetailBookComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

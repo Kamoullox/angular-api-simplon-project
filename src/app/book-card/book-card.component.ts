@@ -26,7 +26,7 @@ export class BookCardComponent implements OnInit {
     this.book.volumeInfo.imageLinks ? this.urlImage = this.book.volumeInfo.imageLinks.thumbnail : this.urlImage = "../assets/noImage.jpg";
 
     // Vérifie si un auteur existe dans le détail du bouquin
-    this.book.volumeInfo.authors ? this.author = this.book.volumeInfo.authors[0] : this.author = "";
+    this.book.volumeInfo.authors ? this.author = this.book.volumeInfo.authors[0] : this.author = "Pas d'auteur pour ce livre, merci l'API Google !	👍🏽";
 
     this.id = this.book.id
   }
