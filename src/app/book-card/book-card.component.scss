@@ -1,13 +1,15 @@
 .book-card {
     width: 280px;
     padding: 16px;
-    border-radius: 5px;
-    background-color: #fff;
     margin: 2vh;
     cursor: pointer;
-    box-shadow:
-      0 3px 6px rgba(0, 0, 0, 0.16),
-      0 3px 6px rgba(0, 0, 0, 0.23);
+    background: rgb(211 211 211 / 25%);
+    box-shadow: -3px 3px 16px 1px rgb(0 0 0 / 37%);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 6px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
   
     .book-card__cover {
       position: relative;
