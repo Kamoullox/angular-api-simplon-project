@@ -2,9 +2,17 @@
 <div class="wrap">
    <div class="search">
       <input type="text" id="texteInput" class="searchTerm" [(ngModel)]="txt" placeholder="Que cherchez-vous ? ">
-      <button type="submit" (click)="submitText()" class="searchButton">
-         <fa-icon [icon]="faSearch"></fa-icon>
-     </button>
+      <div class="buttonSection">
+      
+         <div class="buttonSection__searchBook">
+            <p>Rechercher par livre</p>
+         </div>
+
+         <div class="buttonSection__searchAuthor">
+            <p>Rechercher par auteur</p>
+         </div>
+      </div>
+    
    </div>
 </div>
 
