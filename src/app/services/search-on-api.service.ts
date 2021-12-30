@@ -11,14 +11,14 @@ export class SearchOnApiService{
   // Observable
   subject = new Subject<string>();
 
-  title = "Harry Potter";
+  input = "Harry Potter";
 
-  private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr&maxResults=40`;
+  private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.input}&langrestrict=fr&maxResults=40`;
 
   constructor(private httpClient: HttpClient) { }
 
   public sendGetRequest(){
-    this.urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.title}&langrestrict=fr&maxResults=40`;
+    this.urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.input}&langrestrict=fr&maxResults=40`;
     return this.httpClient.get(this.urlApi);
   }
 

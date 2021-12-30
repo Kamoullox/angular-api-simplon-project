@@ -20,7 +20,7 @@ export class ListBooksCardsComponent implements OnInit {
     this.dataService.subject.subscribe({
       next: (v) => {
         console.log(`In listBooksComponent -> Change user incoming ! : ${v}`);
-        console.log(`Valeur du title dans le service depuis le onInit -> ${this.dataService.title}`);
+        console.log(`Valeur du title dans le service depuis le onInit -> ${this.dataService.input}`);
         this.getBooks();
       }
     });

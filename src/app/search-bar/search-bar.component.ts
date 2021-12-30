@@ -23,7 +23,7 @@ export class SearchBarComponent implements OnInit {
 
   submitText() {
     console.log("dans le submit txt")
-    this.dataService.title = this.txt;
+    this.dataService.input = this.txt;
     this.dataService.subject.next("New Search send !");
   }
 
