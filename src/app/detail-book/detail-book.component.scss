@@ -10,13 +10,7 @@
     align-items: center;
     justify-content: center;
     z-index: 5;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: #fff;
-
-
 
     background: rgb(211 211 211 / 25%);
     box-shadow: -3px 3px 16px 1px rgb(0 0 0 / 37%);
@@ -25,11 +19,9 @@
     border-radius: 6px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
-  
     .book-card__cover {
       position: relative;
       width: 200px;
-      
       margin: 2vh auto 2px auto;
       perspective: 1000px;
     }
@@ -78,7 +70,7 @@
     }
   
     .book-card__author {
-      color: #757575;
+      color: #c9c9c9;
       font-size: 1em;
     }
   
@@ -141,11 +133,16 @@
   @media screen and (min-width: 800px) {
     .book-card {
       display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       &__detail{
         width:50%;
       }
     }
+     
 
     .book-card__description{
       width: 80%;
