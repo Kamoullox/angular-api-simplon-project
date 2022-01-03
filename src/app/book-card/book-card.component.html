@@ -1,9 +1,9 @@
 
-<div class="book-card" (click)="onContinue()" *ngIf="urlImage != '../assets/noImage.jpg'">
+<div class="book-card"  *ngIf="urlImage != '../assets/noImage.jpg'">
   <div class="book-card__cover">
     <div class="book-card__book">
       <div class="book-card__book-front">
-        <img
+        <img (click)="onContinue()"
           class="book-card__img"
           src="{{ urlImage }}"
         />
@@ -13,7 +13,10 @@
     </div>
   </div>
   <div>
-    <div class="book-card__title">{{ title }}</div>
+    <div class="book-card__title" (click)="onContinue()">{{ title }}</div>
     <div class="book-card__author">{{ author }}</div>
+    <div class="book-card__like">
+      <fa-icon (click)="likeUnlike()" [icon]="icone"></fa-icon>
+    </div>
   </div>
 </div>
