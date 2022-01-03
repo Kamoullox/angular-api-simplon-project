@@ -3,14 +3,28 @@
     padding: 16px;
     border-radius: 5px;
     background-color: #fff;
-    margin: 2vh auto;
+    margin: 0 auto;
+    padding-top: 2vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow:
-      0 3px 6px rgba(0, 0, 0, 0.16),
-      0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+
+
+
+    background: rgb(211 211 211 / 25%);
+    box-shadow: -3px 3px 16px 1px rgb(0 0 0 / 37%);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 6px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
   
     .book-card__cover {
       position: relative;
