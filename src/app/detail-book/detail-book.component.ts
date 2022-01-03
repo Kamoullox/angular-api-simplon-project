@@ -27,11 +27,6 @@ export class DetailBookComponent implements OnInit {
     this.dataService.getById(id).subscribe((data) => {
       this.book = data;
       // this.book = this.book.items;
-
-      console.log(data);
-      // console.log(this.books);
-      console.log(this.book);
-
       this.title = this.book.volumeInfo.title;
 
       // Vérifie si une date de publication existe
