@@ -1,1 +1,3 @@
-<p>books-library works!</p>
+<div class="container-list">
+    <app-book-card *ngFor = "let favourite of favouriteBooks"  [book] = "favourite"></app-book-card>
+</div>

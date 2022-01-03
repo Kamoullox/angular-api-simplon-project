@@ -35,7 +35,6 @@ export class DetailBookComponent implements OnInit {
       // Vérifie si un editeur existe
       this.book.volumeInfo.publishedDate ? this.publicationDate = this.book.volumeInfo.publishedDate : this.publicationDate = "Pas de date de publication, merci l'API Google ! 👍🏽";
 
-
       // Vérifie si une note existe
       this.book.volumeInfo.averageRating ? this.rate = this.book.volumeInfo.averageRating : this.rate = 0;
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchOnApiService } from '../services/search-on-api.service';
 import { Subject } from 'rxjs';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private dataService: SearchOnApiService) { }
+  constructor(private dataService: SearchOnApiService, private router: Router) { }
 
   faSearch = faSearch;
 
@@ -32,6 +32,10 @@ export class SearchBarComponent implements OnInit {
     this.dataService.input = this.txt;
     this.dataService.subject.next("author");
     }
+  }
+
+  onLibrary() {
+    this.router.navigateByUrl(`library`);
   }
 
 }

@@ -31,7 +31,6 @@ export class ListBooksCardsComponent implements OnInit {
   }
   
   getBooks(recup?: string): void{
-    console.log(`Valeur de book avant execution de getbooks -> ${this.books}`);
       if (recup){
         this.dataService.SendGetRequestAuthor().subscribe((data) => {
           this.books = data;
