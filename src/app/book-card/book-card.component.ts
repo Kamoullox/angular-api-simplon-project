@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons';
 import { SearchOnApiService } from '../services/search-on-api.service';
@@ -14,6 +14,7 @@ import { SearchOnApiService } from '../services/search-on-api.service';
 export class BookCardComponent implements OnInit {
   @Input() book!: any;
 
+  constructor(private router: Router, private dataService: SearchOnApiService, private activatedRoute: ActivatedRoute) { }
 
   title!: string;
   urlImage!: string;
@@ -26,9 +27,8 @@ export class BookCardComponent implements OnInit {
 
   icone = farFaHeart;
 
-  constructor(private router: Router, private dataService: SearchOnApiService) { }
-
   ngOnInit(): void {
+
     this.title = this.book.volumeInfo.title;
 
     // Vérifie si une image existe dans le détail du bouquin
@@ -38,6 +38,24 @@ export class BookCardComponent implements OnInit {
     this.book.volumeInfo.authors ? this.author = this.book.volumeInfo.authors[0] : this.author = "Pas d'auteur pour ce livre, merci l'API Google !	👍🏽";
 
     this.id = this.book.id
+
+    this.dataService.getLocalStorage();
+
+    if (this.dataService.favorite){
+      this.dataService.favorite = this.dataService.favorite.split(",");
+      this.valueInTable(this.id);
+    }
+
+  }
+
+  valueInTable(val: string){
+    for(let i = 0; i < this.dataService.favorite.length; i++){
+      if (this.dataService.favorite[i] === val){
+        console.log("L'id est présent dans le local strorage !")
+        this.like = true;
+        this.icone = this.like ? fasFaHeart : farFaHeart;
+      }
+    }
   }
 
   onContinue() {
@@ -55,6 +73,12 @@ export class BookCardComponent implements OnInit {
       this.dataService.favorite = this.dataService.arrayRemove(this.id);
       this.dataService.setLocalStorage(); 
     }
+
+    // if (this.activatedRoute.url == "http://localhost:4200/library"){
+
+    // }
+
   }
 
 }
+

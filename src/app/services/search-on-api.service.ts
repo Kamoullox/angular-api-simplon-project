@@ -40,11 +40,10 @@ export class SearchOnApiService{
   }
 
   public getLocalStorage() {
-    return window.localStorage.getItem("favorite");
+    this.favorite = window.localStorage.getItem("favorite");
   }
 
   public arrayRemove(value:string) { 
-    
     return this.favorite.filter(function(ele:any){ 
         return ele != value; 
     });
