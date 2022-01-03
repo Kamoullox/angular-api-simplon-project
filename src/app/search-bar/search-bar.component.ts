@@ -27,10 +27,12 @@ export class SearchBarComponent implements OnInit {
     if (boolVerif === false) {
       this.dataService.input = this.txt;
       this.dataService.subject.next("New Search send !");
+      this.router.navigateByUrl(``);
     }
     else{
     this.dataService.input = this.txt;
     this.dataService.subject.next("author");
+    this.router.navigateByUrl(``);
     }
   }
 
