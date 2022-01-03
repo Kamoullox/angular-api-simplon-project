@@ -13,6 +13,8 @@ export class SearchOnApiService{
   
   input = "Harry Potter";
 
+  favorite:any = [];
+
   private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.input}&langrestrict=fr&maxResults=40`;
 
   constructor(private httpClient: HttpClient) { }
@@ -33,4 +35,18 @@ export class SearchOnApiService{
     return this.httpClient.get(url);
   }
 
+  public setLocalStorage() {
+    window.localStorage.setItem("favorite",`${this.favorite}`);
+  }
+
+  public getLocalStorage() {
+    return window.localStorage.getItem("favorite");
+  }
+
+  public arrayRemove(value:string) { 
+    
+    return this.favorite.filter(function(ele:any){ 
+        return ele != value; 
+    });
+}
 }

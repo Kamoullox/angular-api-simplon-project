@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons';
+import { SearchOnApiService } from '../services/search-on-api.service';
 
 
 
@@ -25,7 +26,7 @@ export class BookCardComponent implements OnInit {
 
   icone = farFaHeart;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dataService: SearchOnApiService) { }
 
   ngOnInit(): void {
     this.title = this.book.volumeInfo.title;
@@ -46,6 +47,14 @@ export class BookCardComponent implements OnInit {
   likeUnlike() {
     this.like = !this.like;
     this.icone = this.like ? fasFaHeart : farFaHeart;
+    if (this.like) {
+      this.dataService.favorite.push(this.id);
+      this.dataService.setLocalStorage();     
+    }
+    else {
+      this.dataService.favorite = this.dataService.arrayRemove(this.id);
+      this.dataService.setLocalStorage(); 
+    }
   }
 
 }
