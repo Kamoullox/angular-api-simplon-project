@@ -24,7 +24,6 @@ export class DetailBookComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    
     this.dataService.getById(id).subscribe((data) => {
       this.book = data;
       // this.book = this.book.items;
@@ -46,7 +45,9 @@ export class DetailBookComponent implements OnInit {
 
       // Vérifie si un auteur existe dans le détail du bouquin
       this.book.volumeInfo.authors ? this.author = this.book.volumeInfo.authors[0] : this.author = "";
+
     })
+
   }
 
 }
