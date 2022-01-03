@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { DetailBookComponent } from './detail-book/detail-book.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // <-- NgModel lives here
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BooksLibraryComponent } from './books-library/books-library.component'; // <-- NgModel lives here
 
 
 
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'; // <-- NgM
     ListBooksCardsComponent,
     SearchBarComponent,
     DetailBookComponent,
-    HomeComponent
+    HomeComponent,
+    BooksLibraryComponent
   ],
   imports: [
     BrowserModule,
