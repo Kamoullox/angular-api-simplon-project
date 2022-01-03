@@ -22,6 +22,11 @@ export class SearchOnApiService{
     return this.httpClient.get(this.urlApi);
   }
 
+  public SendGetRequestAuthor(){
+    this.urlApi = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${this.input}&langrestrict=fr&maxResults=40`;
+    return this.httpClient.get(this.urlApi);
+  }
+
   public getById(id: string){
     let url = `https://www.googleapis.com/books/v1/volumes/${id}`;
     console.log(url)

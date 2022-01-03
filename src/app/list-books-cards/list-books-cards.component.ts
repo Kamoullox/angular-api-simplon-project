@@ -19,26 +19,30 @@ export class ListBooksCardsComponent implements OnInit {
     
     this.dataService.subject.subscribe({
       next: (v) => {
-        console.log(`In listBooksComponent -> Change user incoming ! : ${v}`);
-        console.log(`Valeur du title dans le service depuis le onInit -> ${this.dataService.input}`);
-        this.getBooks();
+        console.log(v);
+        if (v === "author"){
+        this.getBooks(v);
+        }
+        else {
+          this.getBooks();
+        }
       }
     });
   }
   
-  getBooks(): void{
+  getBooks(recup?: string): void{
     console.log(`Valeur de book avant execution de getbooks -> ${this.books}`);
-    // console.log(`valeur de l'url dans le getbooks ${this.dataService.urlApi}`)
-
+      if (recup){
+        this.dataService.SendGetRequestAuthor().subscribe((data) => {
+          this.books = data;
+          this.books = this.books.items;
+        });
+      }
+      else {
       this.dataService.sendGetRequest().subscribe((data) => {
       this.books = data;
       this.books = this.books.items;
-      
-      console.log(data);
-      // console.log(this.books);
-    });
-
-    console.log(`Valeur de book apres execution de getbooks -> ${this.books}`)
+      });
+    }
   }
-
 }
