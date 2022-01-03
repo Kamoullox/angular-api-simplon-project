@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons';
+
 
 
 @Component({
@@ -15,7 +18,12 @@ export class BookCardComponent implements OnInit {
   urlImage!: string;
   author!: string;
   id!: string;
+  like = false;
 
+  fasFaHeart = fasFaHeart;
+  farFaHeart = farFaHeart;
+
+  icone = farFaHeart;
 
   constructor(private router: Router) { }
 
@@ -33,6 +41,11 @@ export class BookCardComponent implements OnInit {
 
   onContinue() {
     this.router.navigateByUrl(`detailBook/${this.id}`);
+  }
+
+  likeUnlike() {
+    this.like = !this.like;
+    this.icone = this.like ? fasFaHeart : farFaHeart;
   }
 
 }

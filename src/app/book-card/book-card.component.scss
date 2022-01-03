@@ -2,7 +2,6 @@
     width: 280px;
     padding: 16px;
     margin: 2vh;
-    cursor: pointer;
     color: white;
     background: rgb(211 211 211 / 25%);
     box-shadow: -3px 3px 16px 1px rgb(0 0 0 / 37%);
@@ -11,13 +10,20 @@
     border-radius: 6px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     
+
   
-    .book-card__cover {
+    &__cover {
       position: relative;
       width: 200px;
       height: 300px;
       margin: 2vh auto 2px auto;
       perspective: 1000px;
+    }
+
+    &__like {
+      cursor: pointer;
+      width: fit-content;
+      height: 2vh;
     }
     
     .book-card__book {
@@ -56,6 +62,8 @@
       width: 100%;
       height: 100%;
       background-color: #e1e1e1;
+      cursor: pointer;
+
     }
   
     .book-card__title {
@@ -66,6 +74,7 @@
       align-items: flex-start;
       justify-content: center;
       overflow: auto;
+      cursor: pointer;
 
     }
   
