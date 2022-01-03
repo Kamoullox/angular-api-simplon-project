@@ -48,7 +48,6 @@ export class DetailBookComponent implements OnInit {
 
     })
 
-
   }
 
 }
