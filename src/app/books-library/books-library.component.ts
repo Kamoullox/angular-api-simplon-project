@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchOnApiService } from '../services/search-on-api.service';
 
 @Component({
   selector: 'app-books-library',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksLibraryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: SearchOnApiService) { 
+    
+  }
 
   ngOnInit(): void {
   }
