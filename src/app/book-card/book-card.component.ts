@@ -80,6 +80,12 @@ export class BookCardComponent implements OnInit {
     }
 
 
+    if(window.location.href.slice(-8) == "/library") {
+      this.router.navigateByUrl("").then( () => {
+        this.router.navigateByUrl("library")
+      });
+    }
+
   }
 
 }
