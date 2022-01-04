@@ -16,7 +16,6 @@ export class BooksLibraryComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getLocalStorage();
-    this.dataService.favorite = this.dataService.favorite.split(",");
 
     this.dataService.favorite.forEach((element:any) => {
       this.dataService.getById(element).subscribe((data) => {

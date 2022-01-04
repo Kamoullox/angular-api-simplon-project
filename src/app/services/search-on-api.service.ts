@@ -13,7 +13,8 @@ export class SearchOnApiService{
   
   input = "Harry Potter";
 
-  favorite:any = [];
+  favorite: string[] = [];
+  listTempo: any;
 
   private urlApi = `https://www.googleapis.com/books/v1/volumes?q=${this.input}&langrestrict=fr&maxResults=40`;
 
@@ -40,7 +41,16 @@ export class SearchOnApiService{
   }
 
   public getLocalStorage() {
-    this.favorite = window.localStorage.getItem("favorite");
+    console.log(`Valeur de favorite dans getLocalStorage avant le getItem : `);
+    console.log(this.favorite);
+    // this.favorite.push("tamere")
+
+    if (window.localStorage.getItem("favorite") != null){
+      this.listTempo = window.localStorage.getItem("favorite")?.split(",");
+      this.favorite =  this.listTempo;
+    }
+    console.log(`Valeur de favorite dans getLocalStorage apres le getItem : `);
+    console.log(this.favorite);
   }
 
   public arrayRemove(value:string) { 
