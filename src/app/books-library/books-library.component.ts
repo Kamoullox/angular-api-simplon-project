@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isEmpty } from 'rxjs';
 import { SearchOnApiService } from '../services/search-on-api.service';
 
 
@@ -17,10 +18,15 @@ export class BooksLibraryComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getLocalStorage();
 
+    console.log(this.dataService.favorite);
+
+    if (this.dataService.favorite)
     this.dataService.favorite.forEach((element:any) => {
-      this.dataService.getById(element).subscribe((data) => {
-        this.favoriteBooks.push(data);
-      });
+      if (element != '') {
+        this.dataService.getById(element).subscribe((data) => {
+          this.favoriteBooks.push(data);
+        });
+      }
     });
   }
 
