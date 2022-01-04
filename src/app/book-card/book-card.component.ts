@@ -41,17 +41,16 @@ export class BookCardComponent implements OnInit {
 
     this.dataService.getLocalStorage();
 
-    if (this.dataService.favorite){
-      this.dataService.favorite = this.dataService.favorite.split(",");
+    if (this.dataService.favorite != []){
       this.valueInTable(this.id);
     }
 
   }
 
+  // Check if val is in table of library
   valueInTable(val: string){
     for(let i = 0; i < this.dataService.favorite.length; i++){
       if (this.dataService.favorite[i] === val){
-        console.log("L'id est présent dans le local strorage !")
         this.like = true;
         this.icone = this.like ? fasFaHeart : farFaHeart;
       }
@@ -65,10 +64,13 @@ export class BookCardComponent implements OnInit {
   likeUnlike() {
     this.like = !this.like;
     this.icone = this.like ? fasFaHeart : farFaHeart;
+
     if (this.like) {
+      console.log(`Valeur du favorite dans le service : ${this.dataService.favorite}`)
       this.dataService.favorite.push(this.id);
       this.dataService.setLocalStorage();
     }
+
     else {
       this.dataService.favorite = this.dataService.arrayRemove(this.id);
       this.dataService.setLocalStorage(); 
