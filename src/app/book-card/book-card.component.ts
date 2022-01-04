@@ -65,9 +65,8 @@ export class BookCardComponent implements OnInit {
     this.like = !this.like;
     this.icone = this.like ? fasFaHeart : farFaHeart;
 
-    console.log(this.dataService.favorite);
-
     if (this.like) {
+      console.log(`Valeur du favorite dans le service : ${this.dataService.favorite}`)
       this.dataService.favorite.push(this.id);
       this.dataService.setLocalStorage();     
     }
