@@ -74,9 +74,6 @@ export class BookCardComponent implements OnInit {
     else {
       this.dataService.favorite = this.dataService.arrayRemove(this.id);
       this.dataService.setLocalStorage(); 
-      this.dataService.getLocalStorage(); 
-      this.router.navigateByUrl(``);
-      this.router.navigateByUrl(`library`);
     }
 
 
