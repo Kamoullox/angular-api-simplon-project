@@ -6,8 +6,10 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class SearchOnApiService {
+
   // Observable
   subject = new Subject<string>();
+  idBookToDelete = new Subject<string>();
 
   input = 'Harry Potter';
 
@@ -30,7 +32,6 @@ export class SearchOnApiService {
 
   public getById(id: string) {
     let url = `https://www.googleapis.com/books/v1/volumes/${id}`;
-    console.log(url);
     return this.httpClient.get(url);
   }
 
@@ -46,8 +47,8 @@ export class SearchOnApiService {
   }
 
   public arrayRemove(value: string) {
-    return this.favorite.filter(function (ele: any) {
-      return ele != value;
+    return this.favorite.filter(function (element: any) {
+      return element != value;
     });
   }
 }

@@ -1,4 +1,7 @@
 <app-search-bar></app-search-bar>
 <div class="container-list">
     <app-book-card *ngFor = "let favorite of favoriteBooks"  [book] = "favorite"></app-book-card>
+    <div class="noFavorite" *ngIf="this.favoriteBooks.length == 0">
+        <p>Vous n'avez pas de livre favoris</p>
+    </div>
 </div>

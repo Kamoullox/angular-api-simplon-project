@@ -45,6 +45,8 @@ export class BookCardComponent implements OnInit {
       this.valueInTable(this.id);
     }
 
+
+
   }
 
   // Check if val is in table of library
@@ -74,17 +76,20 @@ export class BookCardComponent implements OnInit {
     else {
       this.dataService.favorite = this.dataService.arrayRemove(this.id);
       this.dataService.setLocalStorage(); 
+      this.dataService.idBookToDelete.next(this.book);
     }
 
     // if (this.activatedRoute.url == "http://localhost:4200/library"){
-
     // }
 
+
     if(window.location.href.slice(-8) == "/library") {
-      this.router.navigateByUrl("").then( () => {
-        this.router.navigateByUrl("library")
-      });
+      // this.router.navigateByUrl("").then( () => {
+      //   this.router.navigateByUrl("library")
+      // });
+
     }
+
 
   }
 
