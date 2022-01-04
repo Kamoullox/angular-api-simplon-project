@@ -42,7 +42,6 @@ export class BookCardComponent implements OnInit {
     this.dataService.getLocalStorage();
 
     if (this.dataService.favorite != []){
-      console.log(`Valeur de favorite dans le onInit de bookCard : ${typeof(this.dataService.favorite)}`)
       this.valueInTable(this.id);
     }
 
@@ -52,7 +51,6 @@ export class BookCardComponent implements OnInit {
   valueInTable(val: string){
     for(let i = 0; i < this.dataService.favorite.length; i++){
       if (this.dataService.favorite[i] === val){
-        console.log("L'id est présent dans le local strorage !")
         this.like = true;
         this.icone = this.like ? fasFaHeart : farFaHeart;
       }

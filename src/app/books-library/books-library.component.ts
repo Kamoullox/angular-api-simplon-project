@@ -20,7 +20,6 @@ export class BooksLibraryComponent implements OnInit {
     this.dataService.favorite.forEach((element:any) => {
       this.dataService.getById(element).subscribe((data) => {
         this.favoriteBooks.push(data);
-        console.log(this.favoriteBooks)
       });
     });
   }
